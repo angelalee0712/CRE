@@ -1,8 +1,7 @@
 <?php
-    header("Content-type:text/html; charset=GBK");
-   session_start();
-   $conn=mysql_connect("localhost","root","") or die("连接错误!");
-   mysql_select_db("db_cct",$conn);
+        header("Content-type:text/html; charset=GBK");
+        session_start();
+        require("conn.php");
     	mysql_query("SET NAMES GBK");
     	$username=$_POST['username'];
     	
@@ -14,11 +13,8 @@
         $test=mysql_fetch_array($testrst);
     	
     	if($test){  
-    		$_SESSION["id"]=$test['id'];
-    	
-    				$_SESSION["username"]=$test['username'];
-    				
-    				
+    		        $_SESSION["id"]=$test['id'];  	
+    				$_SESSION["username"]=$test['username'];   				
     				$logindate=date("Y-m-d");
     				$logincount=$test['userlastlogincount'];
     				$logincount++;
@@ -28,9 +24,7 @@
      				echo "<script>alert('登录成功！');window.location.href='release/index.php'</script>";
      			
      				return;
-    			}
-
-    	
+    			}    	
     	else{//!$testrst->EOF
     			echo "<script>alert('用户名或密码错误');history.go(-1);</script>";
     			return;

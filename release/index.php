@@ -897,8 +897,7 @@ flash.write("dplayer4");
       <div id="news_lg"><img src="images/news.jpg" alt="" name="tert" width="600" height="20" id="tert" /></div>
       <div id="news_con">
       <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,news WHERE suminfo.`sumid`=news.`sumid`  LIMIT 0,8");
@@ -910,7 +909,7 @@ flash.write("dplayer4");
    				do
    				{
    
-   ?>
+      ?>
          <div id="news_1"><a href="content_news.php?id=<?php echo $myarr['id']; ?>"><?php echo $myarr['title']; ?></a></div>
           <?php }while ($myarr=mysql_fetch_array($query));
 		    }
@@ -977,8 +976,7 @@ flash.write("dplayer4");
         </div>
         <div id="zhinan1_con">
          <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,outline WHERE suminfo.`sumid`=outline.`sumid`  LIMIT 0,8");
@@ -1009,8 +1007,7 @@ flash.write("dplayer4");
           <div class="TabbedPanelsContentGroup">
             <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,news,outline WHERE suminfo.`sumid`=news.`sumid` and suminfo.`sumid`=outline.`sumid` order by updatetime desc LIMIT 0,8");
@@ -1030,8 +1027,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query1=mysql_query("SELECT * FROM suminfo,referbook WHERE suminfo.`sumid`=referbook.`sumid`  LIMIT 0,8");
@@ -1054,8 +1050,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid`  LIMIT 0,8");
@@ -1131,8 +1126,7 @@ flash.write("dplayer4");
                 <div class="TabbedPanelsContentGroup">
                   <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='一级' and style='真题' and subject='WPS Office' LIMIT 0,6");
@@ -1152,8 +1146,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query1=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='一级' and style='真题' and subject='MS Office' LIMIT 0,6");
@@ -1175,8 +1168,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='一级' and style='真题' and subject='Photoshop' LIMIT 0,6");
@@ -1210,8 +1202,7 @@ flash.write("dplayer4");
                 <div class="TabbedPanelsContentGroup">
                   <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		    include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='一级' and style='模拟题' and subject='WPS Office' LIMIT 0,6");
@@ -1231,8 +1222,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query1=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='一级' and style='模拟题' and subject='MS Office' LIMIT 0,6");
@@ -1254,8 +1244,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='一级' and style='模拟题' and subject='Photoshop' LIMIT 0,6");
@@ -1291,8 +1280,7 @@ flash.write("dplayer4");
                 <div class="TabbedPanelsContentGroup">
                   <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='一级' and style='仿真题' and  subject='WPS Office' LIMIT 0,6");
@@ -1312,8 +1300,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query1=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='一级' and style='仿真题' and subject='MS Office' LIMIT 0,6");
@@ -1335,8 +1322,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='一级' and style='仿真题' and subject='Photoshop' LIMIT 0,6");
@@ -1383,8 +1369,7 @@ flash.write("dplayer4");
         <div id="yj_fuxi_title" align="center"><a href="listrank2.php">全国计算机等级考试辅导：MS Office</a> </div>
        
         <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,video WHERE suminfo.`sumid`=video.`sumid` and grade='一级'  LIMIT 0,6");
@@ -1443,8 +1428,7 @@ flash.write("dplayer4");
                 <div class="TabbedPanelsContentGroup">
                   <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='二级' and style='真题' and subject='VC'  LIMIT 0,6");
@@ -1464,8 +1448,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='二级' and style='真题' and subject='VB' LIMIT 0,6");
@@ -1487,8 +1470,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='二级' and style='真题' and subject='Java' LIMIT 0,6");
@@ -1508,8 +1490,7 @@ flash.write("dplayer4");
             </div>
             <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='二级' and style='真题'  and subject='Mysql' LIMIT 0,6");
@@ -1545,8 +1526,7 @@ flash.write("dplayer4");
                 <div class="TabbedPanelsContentGroup">
                        <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='二级' and style='模拟题' and subject='VC'  LIMIT 0,6");
@@ -1566,8 +1546,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query1=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='二级' and style='模拟题' and subject='VB' LIMIT 0,6");
@@ -1589,8 +1568,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='二级' and style='模拟题' and subject='Java' LIMIT 0,6");
@@ -1610,8 +1588,7 @@ flash.write("dplayer4");
             </div>
             <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='二级' and style='模拟题'  and subject='Mysql' LIMIT 0,6");
@@ -1651,8 +1628,7 @@ flash.write("dplayer4");
                 <div class="TabbedPanelsContentGroup">
                        <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='二级' and style='仿真题' and subject='VC'  LIMIT 0,6");
@@ -1672,8 +1648,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query1=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='二级' and style='仿真题' and subject='VB' LIMIT 0,6");
@@ -1695,8 +1670,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='二级' and style='仿真题' and subject='Java' LIMIT 0,6");
@@ -1716,8 +1690,7 @@ flash.write("dplayer4");
             </div>
             <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='二级' and style='仿真题'  and subject='Mysql' LIMIT 0,6");
@@ -1763,8 +1736,7 @@ flash.write("dplayer4");
         <div id="yj_fuxi_title" align="center"><a href="listrank2.php">全国计算机辅导教程：VC辅导</a></div>
         
         <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,video WHERE suminfo.`sumid`=video.`sumid` and grade='一级'  LIMIT 0,6");
@@ -1822,8 +1794,7 @@ flash.write("dplayer4");
                 <div class="TabbedPanelsContentGroup">
                         <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='三级' and style='真题' and subject='网络技术'  LIMIT 0,6");
@@ -1843,8 +1814,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query1=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='三级' and style='真题' and subject='数据库技术' LIMIT 0,6");
@@ -1866,8 +1836,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='三级' and style='真题' and subject='软件技术' LIMIT 0,6");
@@ -1904,8 +1873,7 @@ flash.write("dplayer4");
                 <div class="TabbedPanelsContentGroup">
                         <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='三级' and style='模拟题' and subject='网络技术'  LIMIT 0,6");
@@ -1925,8 +1893,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query1=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='三级' and style='模拟题' and subject='数据库技术' LIMIT 0,6");
@@ -1948,8 +1915,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='三级' and style='模拟题' and subject='软件' LIMIT 0,6");
@@ -1987,8 +1953,7 @@ flash.write("dplayer4");
                 <div class="TabbedPanelsContentGroup">
                         <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='三级' and style='仿真题' and subject='网络技术'  LIMIT 0,6");
@@ -2008,8 +1973,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query1=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='三级' and style='仿真题' and subject='数据库技术' LIMIT 0,6");
@@ -2031,8 +1995,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='三级' and style='仿真题' and subject='软件' LIMIT 0,6");
@@ -2079,8 +2042,7 @@ flash.write("dplayer4");
         <div id="yj_fuxi_title" align="center"><a href="listrank2.php">全国计算机等级考试教程：上机题库</a></div>
         
         <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,video WHERE suminfo.`sumid`=video.`sumid` and grade='三级'  LIMIT 0,6");
@@ -2138,8 +2100,7 @@ flash.write("dplayer4");
                 <div class="TabbedPanelsContentGroup">
                         <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='四级' and style='真题' and subject='网络工程师'  LIMIT 0,6");
@@ -2159,8 +2120,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query1=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='四级' and style='真题' and subject='数据库工程师' LIMIT 0,6");
@@ -2182,8 +2142,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='四级' and style='真题' and subject='软件工程师' LIMIT 0,6");
@@ -2224,8 +2183,7 @@ flash.write("dplayer4");
                 <div class="TabbedPanelsContentGroup">
                        <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='四级' and style='模拟题' and subject='网络工程师'  LIMIT 0,6");
@@ -2245,8 +2203,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query1=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='四级' and style='模拟题' and subject='数据库工程师' LIMIT 0,6");
@@ -2268,8 +2225,7 @@ flash.write("dplayer4");
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid` and grade='四级' and style='模拟题' and subject='软件工程师' LIMIT 0,6");
@@ -2316,8 +2272,7 @@ flash.write("dplayer4");
         <div id="yj_fuxi_title" align="center"><a href="listrank2.php">全国计算机等级考试辅导：网络工程师</a></div>
        
         <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,video WHERE suminfo.`sumid`=video.`sumid` and grade='四级'  LIMIT 0,6");

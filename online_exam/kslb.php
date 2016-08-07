@@ -440,23 +440,23 @@ function MM_showHideLayers() { //v9.0
                 <option>四级</option>
               </select>
           </label></td>
-          <td><label for="grade">类型：
-              <select name="grade" id="grade">
+          <td><label for="style">类型：
+              <select name="style" id="style">
                 <option>真题</option>
                 <option>模拟题</option>
                 <option>仿真题</option>
                 <option>经典试题</option>
               </select>
           </label></td>
-          <td><label for="grade">科目：
-              <select name="grade" id="grade">
+          <td><label for="subject">科目：
+              <select name="subject" id="subject">
                 <option>VB</option>
                 <option>VC</option>
                 <option>Java</option>
                 <option>数据库技术</option>
               </select>
           </label></td>
-          <td><input type="submit" name="search" id="search" value="搜索" /></td>
+          <td><input type="submit" name="search" id="search" value="search" /></td>
         </tr>
       </table>
       </form>
@@ -467,19 +467,19 @@ function MM_showHideLayers() { //v9.0
           <div id="2j_VBlg">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 更多</div>
           <div id="2j_VBnr">
    <?php 
-              $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+              include '../conn.php';
             if($_POST['search']==NULL){
+            
 		     
 		      mysql_query("set names gbk");
 		     
-		     $query=mysql_query("SELECT * FROM suminfo where  isexam='是' limit 0,10");
-            }else if($_POST['search']=="搜索"){
+		     $query=mysql_query("SELECT * FROM suminfo where  ischoice='是' limit 0,10");
+            }else if($_POST['search']=="search"){
             	mysql_query("set names gbk");
 		     $grade=$_POST['grade'];
 		     $style=$_POST['style'];
 		     $subject=$_POST['subject'];
-		     $query=mysql_query("SELECT * FROM suminfo where  grade='$grade' and style='$style' and subject='$subject' and ischoice='是' limit 0,10");
+		     $query=mysql_query("SELECT * FROM suminfo where  grade='$grade' and style='$style' and subject='$subject' limit 0,10");
             }
 
 		     $myarr=mysql_fetch_array($query);
@@ -490,7 +490,7 @@ function MM_showHideLayers() { //v9.0
    				{
    
    ?>
-            <div id="2j_VB1"><a href="2.php?id=<?php echo $myarr['sumid']; ?>"><?php echo $myarr['title']; ?></a> </div>    
+            <div id="2j_VB1"><a href="kscontent.php?id=<?php echo $myarr['sumid']; ?>"><?php echo $myarr['title']; ?></a> </div>    
           <?php }while ($myarr=mysql_fetch_array($query));
 		    }
             
@@ -504,13 +504,12 @@ function MM_showHideLayers() { //v9.0
         <div id="2j_VBlg">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 更多</div>
           <div id="2j_VBnr">
        <?php 
-              $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+              include '../conn.php';
             if($_POST['search']==NULL){
 		     
 		      mysql_query("set names gbk");
 		     
-		     $query=mysql_query("SELECT * FROM suminfo where  isexam='是' limit 10,10");
+		     $query=mysql_query("SELECT * FROM suminfo where  ischoice='是' limit 10,10");
             }else if($_POST['search']=="搜索"){
             	mysql_query("set names gbk");
 		     $grade=$_POST['grade'];
@@ -538,13 +537,12 @@ function MM_showHideLayers() { //v9.0
        
           <div id="2j_Javalg">此处显示  id "2j_Javalg" 的内容&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 更多</div>
             <?php 
-              $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+              include '../conn.php';
             if($_POST['search']==NULL){
 		     
 		      mysql_query("set names gbk");
 		     
-		     $query=mysql_query("SELECT * FROM suminfo where  isexam='是' limit 20,10");
+		     $query=mysql_query("SELECT * FROM suminfo where  ischoice='是' limit 20,10");
             }else if($_POST['search']=="搜索"){
             	mysql_query("set names gbk");
 		     $grade=$_POST['grade'];
@@ -578,8 +576,7 @@ function MM_showHideLayers() { //v9.0
             <div class="TabbedPanelsContentGroup">
               <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,news,outline WHERE suminfo.`sumid`=news.`sumid` and suminfo.`sumid`=outline.`sumid` order by updatetime desc LIMIT 0,8");
@@ -599,8 +596,7 @@ function MM_showHideLayers() { //v9.0
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query1=mysql_query("SELECT * FROM suminfo,referbook WHERE suminfo.`sumid`=referbook.`sumid`  LIMIT 0,8");
@@ -623,8 +619,7 @@ function MM_showHideLayers() { //v9.0
             </div>
              <div class="TabbedPanelsContent">
             <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,paper WHERE suminfo.`sumid`=paper.`sumid`  LIMIT 0,8");
@@ -651,8 +646,7 @@ function MM_showHideLayers() { //v9.0
         </div>
         <div id="zhinan1_con">
          <?php 
-		     $conn=mysql_connect("localhost","root","") or die("连接错误!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     
 		     $query=mysql_query("SELECT * FROM suminfo,outline WHERE suminfo.`sumid`=outline.`sumid`  LIMIT 0,8");

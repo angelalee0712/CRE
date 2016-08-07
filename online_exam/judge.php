@@ -1,8 +1,6 @@
 <?php 
 
-$conn=mysql_connect("localhost","root","") or die("连接错误!");
-   mysql_select_db("db_cct",$conn);
-   
+include '../conn.php';
 //获取所有的参数名，
 $keys = array_keys($_POST);
 
@@ -17,7 +15,7 @@ for($i = 0;$i<$keynum-1;$i++)
 {
 	$ikeyname = $keys[$i]; //第i个参数的名字
 	
-	$query=mysql_query("SELECT exam.*  from exam where paperid='$ikeyname'");
+	$query=mysql_query("SELECT paper.*  from paper where testid='$ikeyname'");
 	$myrow=mysql_fetch_array($query);
 ?>
   <tr>
@@ -26,12 +24,12 @@ for($i = 0;$i<$keynum-1;$i++)
 
 <?php 	
 	$userchose = $_POST[$ikeyname];
-	if($userchose == $myrow['rightanwser'] and $userchose!=NULL)	//正确
+	if($userchose == $myrow['rightanswer'] and $userchose!=NULL)	//正确
 	{
 		$score+=$myrow['score'];
 	?>
 	
-	<td>你的选择是：<?php echo $userchose; ?>！正确答案是：<?php echo $myrow['rightanwser']; ?>！恭喜您答对了！</td>
+	<td>你的选择是：<?php echo $userchose; ?>！正确答案是：<?php echo $myrow['rightanswer']; ?>！恭喜您答对了！</td>
 	
 	<?php 	
 	}
@@ -39,7 +37,7 @@ for($i = 0;$i<$keynum-1;$i++)
 	 {
 	?>
 		
-	<td>你的选择是：<?php echo "$userchose"; ?>！正确答案是：<?php echo $myrow['rightanwser']; ?>！你答错了！</td>
+	<td>你的选择是：<?php echo "$userchose"; ?>！正确答案：<?php echo $myrow['rightanswer']; ?>！你答错了！</td>
 	
 		
 	<?php 

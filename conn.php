@@ -1,4 +1,4 @@
 <?php
-   $conn=mysql_connect("localhost","root","") or die("连接错误!");
+   $conn=@mysql_connect("localhost","root","") or die("连接错误!");
    mysql_select_db("db_cct",$conn);
 ?>

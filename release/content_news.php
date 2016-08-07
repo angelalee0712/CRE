@@ -430,8 +430,7 @@ function MM_showHideLayers() { //v9.0
     <div  id="main" class="main">
       <div id="main_nr" class="main_nr">
       <?php 
-		     $conn=mysql_connect("localhost","root","") or die("Á¬½Ó´íÎó!");
-		       mysql_select_db("db_cct",$conn);
+		     include '../conn.php';
 		      mysql_query("set names gbk");
 		     $id=$_GET['id'];
 		    
